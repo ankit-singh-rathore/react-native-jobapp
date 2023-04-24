@@ -18,9 +18,9 @@ const { isLoading, error , data} = useFetch (
   }
 )
 
-console.log("DDD", data);
+console.log(data);
 
-  // const isLoading = false;    -- isLoading and error will now come dynamically from usefetch hook (above)
+  // const isLoading = false;    -- isLoading and error will now come dynamically from usefetch hook (above) | data will be used in FlatList
   // const error = false;
   return (
     <View style={styles.container}>
@@ -35,7 +35,7 @@ console.log("DDD", data);
           <Text>Something is wrong</Text>
         ) : (
           <FlatList
-            data={[1, 2, 3, 4, 5]}
+            data={data}
             renderItem={({ item }) => <PopularJobCard item={item} />}
             keyExtractor={(item) => item?.job_id}
             contentContainerStyle={{ columnGap: SIZES.medium }}
