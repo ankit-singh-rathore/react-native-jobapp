@@ -29,7 +29,7 @@ const Welcome = () => {
           <TextInput
             style={styles.searchInput}
             value=""
-            onChange={() => {}}
+            onChangeText={() => {}}
             placeholder="What are you loking for.."
           />
         </View>
