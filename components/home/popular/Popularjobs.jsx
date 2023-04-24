@@ -1,14 +1,15 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 import styles from "./popularjobs.style";
 import { COLORS, SIZES } from "../../../constants";
-import { ActivityIndicator } from "react-native-web";
 
 import useFetch from '../../../hooks/useFetch';
+import { useRouter } from "expo-router";
 
 const Popularjobs = () => {
+  const router = useRouter();
 
 const { isLoading, error , data} = useFetch (
   'search',
